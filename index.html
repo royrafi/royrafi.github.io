@@ -3,103 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - IT Support to Web Developer</title>
+    <title>Portfolio Roy as a Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #4A90E2, #9013FE);
+            color: #f7f7f7;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        header, section, footer {
+            transition: transform 0.3s ease-in-out;
+            padding: 3rem;
+        }
+        header:hover, section:hover, footer:hover {
+            transform: translateY(-5px);
+        }
+        a {
+            transition: color 0.3s ease-in-out;
+        }
+        a:hover {
+            color: #ffdd57;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+        }
+        .section-title {
+            margin-bottom: 2rem;
+        }
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
     <!-- Header Section -->
-    <header class="bg-white shadow">
-        <div class="container mx-auto p-6">
-            <h1 class="text-3xl font-bold text-center">Roy Rafi Donissafaat - Web Developer & IT Support Specialist</h1>
+    <header class="bg-white bg-opacity-90 shadow-md rounded-lg mb-8">
+        <div class="container mx-auto text-center">
+            <h1 class="font-bold text-gray-900">Roy Rafi Donissafaat - Web Developer & IT Support Specialist</h1>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="container mx-auto p-6 my-10">
-        <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-        <p class="text-lg">
+    <section id="about" class="container mx-auto bg-white bg-opacity-90 rounded-lg shadow-md mb-8">
+        <h2 class="section-title text-center text-gray-900">About Me</h2>
+        <p class="text-lg text-gray-800 text-center">
             I am a passionate web developer with under one year of experience transitioning from IT Support. I am eager to leverage my skills in problem-solving and technology to create impactful web solutions.
         </p>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="bg-white p-6 my-10 shadow-md">
-        <div class="container mx-auto">
-            <h2 class="text-2xl font-semibold mb-4">Skills</h2>
-            <ul class="grid grid-cols-2 gap-4">
-                <li class="bg-gray-200 p-4 rounded">HTML5</li>
-                <li class="bg-gray-200 p-4 rounded">CSS3</li>
-                <li class="bg-gray-200 p-4 rounded">JavaScript</li>
-                <li class="bg-gray-200 p-4 rounded">IT Support</li>
-            </ul>
-        </div>
+    <section id="skills" class="container mx-auto bg-white bg-opacity-90 rounded-lg shadow-md mb-8">
+        <h2 class="section-title text-center text-gray-900">Skills</h2>
+        <ul class="grid grid-cols-2 md:grid-cols-3 gap-6 text-gray-800 text-center">
+            <li class="bg-gray-200 p-4 rounded">HTML5</li>
+            <li class="bg-gray-200 p-4 rounded">CSS3</li>
+            <li class="bg-gray-200 p-4 rounded">JavaScript</li>
+            <li class="bg-gray-200 p-4 rounded">IT Support</li>
+            <!-- <li class="bg-gray-200 p-4 rounded">Problem Solving</li>
+            <li class="bg-gray-200 p-4 rounded">Customer Support</li> -->
+        </ul>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="container mx-auto p-6 my-10">
-        <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section id="projects" class="container mx-auto bg-white bg-opacity-90 rounded-lg shadow-md mb-8">
+        <h2 class="section-title text-center text-gray-900">Projects</h2>
+        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> -->
+        <div>
             <!-- Project 1 -->
-            <div class="bg-white p-4 shadow-md rounded">
+            <div class="bg-white p-4 shadow-md rounded-lg">
                 <img src="img/simanag.png" alt="Simanag Project Screenshot" class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Project 1: Simanag</h3>
-                <p class="text-lg mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Project 1: Simanag</h3>
+                <p class="text-lg text-gray-800 mb-4">
                     Simanag is a website developed for the Surabaya City Ministry of Religion Office, designed to streamline the process of accepting prospective interns. The site facilitates application submission, review, and management, providing a user-friendly interface for both applicants and administrators.
                 </p>
-                <a href="https://link-to-your-simanag-project.com" target="_blank" class="text-blue-500 hover:underline">View Project</a>
+                <!-- <a href="https://link-to-your-simanag-project.com" target="_blank" class="text-blue-500 hover:underline">View Project</a> -->
             </div>
             <!-- Project 2 -->
-            <!-- <div class="bg-white p-4 shadow-md rounded">
-                <h3 class="text-xl font-semibold mb-2">Project 2: Personal Portfolio</h3>
-                <p class="text-lg">A responsive portfolio website showcasing my journey from IT Support to Web Development.</p>
+            <!-- <div class="bg-white p-4 shadow-md rounded-lg">
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Project 2: Personal Portfolio</h3>
+                <p class="text-lg text-gray-800">A responsive portfolio website showcasing my journey from IT Support to Web Development.</p>
             </div> -->
         </div>
     </section>
-    
-    
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-white p-6 my-10 shadow-md rounded-lg">
-        <div class="container mx-auto">
-            <h2 class="text-2xl font-semibold mb-4 text-center">Contact Me</h2>
-            <p class="text-center text-lg mb-6">Feel free to reach out for collaborations or just a friendly chat!</p>
-            <form id="contactForm" class="space-y-6 max-w-md mx-auto">
-                <div>
-                    <label for="name" class="block text-lg font-medium mb-1">Name</label>
-                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your Name" required>
-                </div>
-                <div>
-                    <label for="email" class="block text-lg font-medium mb-1">Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your Email" required>
-                </div>
-                <div>
-                    <label for="message" class="block text-lg font-medium mb-1">Message</label>
-                    <textarea id="message" name="message" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 focus:outline-none">Send Message</button>
-            </form>
-            <div id="formFeedback" class="text-center mt-4 hidden"></div>
-        </div>
+    <section id="contact" class="container mx-auto bg-white bg-opacity-90 rounded-lg shadow-md mb-8">
+        <h2 class="section-title text-center text-gray-900">Contact Me</h2>
+        <p class="text-center text-lg mb-6 text-gray-800">Feel free to reach out for collaborations or just a friendly chat!</p>
+        <form id="contactForm" class="space-y-6 max-w-md mx-auto">
+            <div>
+                <label for="name" class="block text-lg font-medium mb-1 text-gray-900">Name</label>
+                <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your Name" required>
+            </div>
+            <div>
+                <label for="email" class="block text-lg font-medium mb-1 text-gray-900">Email</label>
+                <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your Email" required>
+            </div>
+            <div>
+                <label for="message" class="block text-lg font-medium mb-1 text-gray-900">Message</label>
+                <textarea id="message" name="message" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 focus:outline-none">Send Message</button>
+        </form>
+        <div id="formFeedback" class="text-center mt-4 hidden"></div>
     </section>
-    
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-6">
+    <footer class="bg-gray-800 text-white p-6 rounded-lg">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <div class="text-center md:text-left mb-4 md:mb-0">
                 <p>&copy; 2024 Roy Rafi Donissafaat. All Rights Reserved.</p>
                 <p class="text-sm text-gray-400">Web Developer & IT Support Specialist</p>
             </div>
             <div class="flex space-x-4">
-                <a href="https://www.linkedin.com/in/royrafidonissafaat" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-white transition">
                     <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M4.983 3.5C4.983 4.881 3.9 6 2.483 6 1.067 6 0 4.881 0 3.5 0 2.12 1.066 1 2.482 1c1.417 0 2.5 1.12 2.5 2.5zm.017 4h-5v16h5V7.5zM9.98 7.5h-4.98v16H10v-8.735c0-4.403 5.58-4.768 5.58 0V23.5h5v-10.29C20.581 6.377 15.678 6.907 10 10.018V7.5zm13 0v16h-5v-16h5z"/>
+                        <!-- GitHub SVG Path -->
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <!-- LinkedIn SVG Path -->
+                    </svg>
+                </a>
+                <a href="mailto:yourname@example.com" aria-label="Email" class="text-gray-400 hover:text-white transition">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <!-- Email SVG Path -->
                     </svg>
                 </a>
             </div>
         </div>
     </footer>
-    
 
     <script src="script.js"></script>
 </body>
