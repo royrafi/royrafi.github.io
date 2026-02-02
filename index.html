@@ -3,148 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Roy as a Web Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>PastiAda</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #4A90E2, #9013FE);
-            color: #f7f7f7;
-        }
-        .container {
-            max-width: 1200px;
-        }
-        header, section, footer {
-            transition: transform 0.3s ease-in-out;
-            padding: 3rem;
-        }
-        header:hover, section:hover, footer:hover {
-            transform: translateY(-5px);
-        }
-        a {
-            transition: color 0.3s ease-in-out;
-        }
-        a:hover {
-            color: #ffdd57;
-        }
-        h1 {
-            font-size: 2.5rem;
-        }
-        h2 {
-            font-size: 2rem;
-        }
-        h3 {
-            font-size: 1.5rem;
-        }
-        .section-title {
-            margin-bottom: 2rem;
-        }
-        .shadow-md {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Header Section -->
-    <header class="bg-white bg-opacity-90 shadow-md rounded-lg mb-8">
-        <div class="container mx-auto text-center">
-            <h1 class="font-bold text-gray-900">Roy Rafi Donissafaat - Web Developer & IT Support Specialist</h1>
+<body class="bg-gray-50">
+
+    <!-- Top Header & Main Header -->
+    <!-- (Existing header code remains the same) -->
+
+    <!-- Main Header -->
+    <header class="main-header sticky top-0 bg-white z-20 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="logo text-2xl font-bold text-gray-800">
+                <i class="fas fa-store text-teal-500"></i> PastiAda
+            </div>
+            <div class="search-bar flex items-center border rounded-md">
+                <div class="relative">
+                    <button class="px-4 py-2 text-gray-600">Category <i class="fas fa-chevron-down text-xs"></i></button>
+                </div>
+                <input type="text" placeholder="Search..." class="pl-4 pr-10 py-2 w-64 focus:outline-none">
+                <button class="px-4 text-gray-500 hover:text-teal-500">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="cart">
+                <a href="#" id="cart-button" class="flex items-center space-x-2 text-gray-700 hover:text-teal-500">
+                    <i class="fas fa-shopping-cart text-2xl text-teal-500"></i>
+                    <div>
+                        <span class="font-bold">KERANJANG</span><br>
+                        <span id="cart-info" class="text-sm">(0) Barang - Rp 0</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="container mx-auto bg-white bg-opacity-90 rounded-lg shadow-md mb-8">
-        <h2 class="section-title text-center text-gray-900">About Me</h2>
-        <p class="text-lg text-gray-800 text-center">
-            I am a passionate web developer with under one year of experience transitioning from IT Support. I am eager to leverage my skills in problem-solving and technology to create impactful web solutions.
-        </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="container mx-auto bg-white bg-opacity-90 rounded-lg shadow-md mb-8">
-        <h2 class="section-title text-center text-gray-900">Skills</h2>
-        <ul class="grid grid-cols-2 md:grid-cols-3 gap-6 text-gray-800 text-center">
-            <li class="bg-gray-200 p-4 rounded">HTML5</li>
-            <li class="bg-gray-200 p-4 rounded">CSS3</li>
-            <li class="bg-gray-200 p-4 rounded">JavaScript</li>
-            <li class="bg-gray-200 p-4 rounded">IT Support</li>
-            <!-- <li class="bg-gray-200 p-4 rounded">Problem Solving</li>
-            <li class="bg-gray-200 p-4 rounded">Customer Support</li> -->
-        </ul>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container mx-auto bg-white bg-opacity-90 rounded-lg shadow-md mb-8">
-        <h2 class="section-title text-center text-gray-900">Projects</h2>
-        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> -->
-        <div>
-            <!-- Project 1 -->
-            <div class="bg-white p-4 shadow-md rounded-lg">
-                <img src="img/simanag.png" alt="Simanag Project Screenshot" class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2 text-gray-900">Project 1: Simanag</h3>
-                <p class="text-lg text-gray-800 mb-4">
-                    Simanag is a website developed for the Surabaya City Ministry of Religion Office, designed to streamline the process of accepting prospective interns. The site facilitates application submission, review, and management, providing a user-friendly interface for both applicants and administrators.
-                </p>
-                <!-- <a href="https://link-to-your-simanag-project.com" target="_blank" class="text-blue-500 hover:underline">View Project</a> -->
-            </div>
-            <!-- Project 2 -->
-            <!-- <div class="bg-white p-4 shadow-md rounded-lg">
-                <h3 class="text-xl font-semibold mb-2 text-gray-900">Project 2: Personal Portfolio</h3>
-                <p class="text-lg text-gray-800">A responsive portfolio website showcasing my journey from IT Support to Web Development.</p>
-            </div> -->
+    <!-- Product Section -->
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Produk Kami</h2>
+        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Products will be loaded here -->
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container mx-auto bg-white bg-opacity-90 rounded-lg shadow-md mb-8">
-        <h2 class="section-title text-center text-gray-900">Contact Me</h2>
-        <p class="text-center text-lg mb-6 text-gray-800">Feel free to reach out for collaborations or just a friendly chat!</p>
-        <form id="contactForm" class="space-y-6 max-w-md mx-auto">
-            <div>
-                <label for="name" class="block text-lg font-medium mb-1 text-gray-900">Name</label>
-                <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your Name" required>
-            </div>
-            <div>
-                <label for="email" class="block text-lg font-medium mb-1 text-gray-900">Email</label>
-                <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your Email" required>
-            </div>
-            <div>
-                <label for="message" class="block text-lg font-medium mb-1 text-gray-900">Message</label>
-                <textarea id="message" name="message" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 focus:outline-none">Send Message</button>
-        </form>
-        <div id="formFeedback" class="text-center mt-4 hidden"></div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-6 rounded-lg">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="text-center md:text-left mb-4 md:mb-0">
-                <p>&copy; 2024 Roy Rafi Donissafaat. All Rights Reserved.</p>
-                <p class="text-sm text-gray-400">Web Developer & IT Support Specialist</p>
-            </div>
-            <div class="flex space-x-4">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-white transition">
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <!-- GitHub SVG Path -->
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <!-- LinkedIn SVG Path -->
-                    </svg>
-                </a>
-                <a href="mailto:yourname@example.com" aria-label="Email" class="text-gray-400 hover:text-white transition">
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <!-- Email SVG Path -->
-                    </svg>
-                </a>
-            </div>
+    <footer class="bg-gray-800 text-white p-6 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 PastiAda. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h3 class="text-xl font-bold">Keranjang Belanja</h3>
+                <button id="close-cart-modal" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div id="cart-items-container" class="p-4 max-h-96 overflow-y-auto"></div>
+            <div class="p-4 border-t">
+                <div class="flex justify-between items-center font-bold text-lg">
+                    <span>Total</span>
+                    <span id="cart-modal-total">Rp 0</span>
+                </div>
+                <button id="proceed-to-shipping-button" class="mt-4 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 font-bold disabled:bg-gray-400">
+                    Lanjutkan ke Pengiriman
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shipping Form Modal -->
+    <div id="shipping-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h3 class="text-xl font-bold">Detail Pengiriman</h3>
+                <button id="close-shipping-modal" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <form id="shipping-form" class="p-4 space-y-4">
+                <div>
+                    <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="telepon" class="block text-sm font-medium text-gray-700">Nomor Telepon (WhatsApp)</label>
+                    <input type="tel" id="telepon" name="telepon" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat Lengkap</label>
+                    <textarea id="alamat" name="alamat" rows="3" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div>
+                    <label for="metode_pembayaran" class="block text-sm font-medium text-gray-700">Metode Pembayaran</label>
+                    <select id="metode_pembayaran" name="metode_pembayaran" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Pilih Metode</option>
+                        <option value="Transfer Bank">Transfer Bank</option>
+                        <option value="COD (Bayar di Tempat)">COD (Bayar di Tempat)</option>
+                    </select>
+                </div>
+                <div class="flex justify-end space-x-4 pt-4">
+                     <button type="button" id="back-to-cart-button" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300">Kembali</button>
+                    <button type="submit" id="checkout-wa-button" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 font-bold">
+                        Kirim Pesanan via WhatsApp
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
