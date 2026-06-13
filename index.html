@@ -1,119 +1,385 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PastiAda</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roy Rafi Donissafaat — Digital Marketing & SEO Specialist</title>
+<meta name="description" content="Portfolio Roy Rafi Donissafaat - Digital Marketing Specialist untuk industri logistik & ekspedisi container. SEO, Google Ads, Content Ops.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8fafc;
+  --surface:#ffffff;
+  --ink:#0f172a;
+  --muted:#5b6478;
+  --line:#e2e8f0;
+  --brand:#0f766e;
+  --brand-2:#0d9488;
+  --brand-light:#ccfbf1;
+  --accent:#f59e0b;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(15,23,42,.06);
+  --max:1050px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--ink);color:#fff;
+  padding:13px 20px;border-radius:999px;font-weight:700;font-size:15px;
+  text-decoration:none;border:2px solid var(--ink);
+  transition:.18s;
+}
+.btn:hover{background:#1e293b;text-decoration:none;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:#f1f5f9}
+.btn.brand{background:var(--brand);border-color:var(--brand)}
+.btn.brand:hover{background:var(--brand-2)}
+.tag{
+  display:inline-block;background:var(--brand-light);color:#0f5953;
+  font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px;
+}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(248,250,252,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:var(--max);margin:0 auto}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.3px;color:var(--ink);text-decoration:none}
+.logo span{color:var(--brand)}
+.nav-links{display:flex;gap:28px;font-size:14.5px;font-weight:600}
+.nav-links a{color:#334155;text-decoration:none}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{display:none}
+@media(min-width:760px){.nav-cta{display:block}}
+
+/* HERO */
+.hero{padding:78px 0 56px}
+.hero-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.2fr .8fr}}
+h1{
+  font-size: clamp(36px, 5.2vw, 56px);
+  line-height:1.08;letter-spacing:-1.4px;font-weight:800;margin-bottom:16px;
+}
+.lead{font-size:18px;color:#3b4355;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 22px;box-shadow:var(--shadow);
+}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.stat{background:#f6f8fb;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stat b{display:block;font-size:22px}
+.stat span{font-size:12.5px;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.badge{font-size:12.5px;font-weight:600;background:#f1f5f9;color:#334155;padding:6px 12px;border-radius:999px;border:1px solid var(--line)}
+
+/* SECTION */
+section{padding:64px 0}
+.section-kicker{color:var(--brand);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+h2{font-size: clamp(26px, 3.4vw, 36px);letter-spacing:-.7px;margin-bottom:14px}
+.section-desc{color:var(--muted);max-width:680px;margin-bottom:28px}
+
+/* CARDS */
+.card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:26px 26px;
+  box-shadow:var(--shadow);
+}
+.grid-2{display:grid;gap:18px}
+@media(min-width:820px){.grid-2{grid-template-columns:1fr 1fr}}
+.grid-3{display:grid;gap:18px}
+@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+.job-title{font-size:19px;font-weight:700;margin-bottom:4px}
+.job-meta{color:var(--muted);font-size:14px;margin-bottom:12px}
+ul.clean{padding-left:18px}
+ul.clean li{margin-bottom:7px;color:#334155}
+
+/* SKILLS */
+.skill-pill{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;font-weight:600;font-size:14.5px;
+}
+.skill-pill small{display:block;font-weight:500;color:var(--muted);margin-top:3px}
+
+/* PORTFOLIO */
+.portfolio-item{
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 20px;
+  transition:.18s;
+}
+.portfolio-item:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.portfolio-item h4{font-size:16px;margin-bottom:6px}
+.portfolio-item p{font-size:14px;color:var(--muted)}
+.route-tag{font-size:12px;font-weight:700;color:#0f5953;background:#e6fffb;padding:4px 10px;border-radius:999px;display:inline-block;margin-bottom:8px}
+
+/* CONTACT */
+.contact-box{
+  background:#0f172a;color:#e2e8f0;border-radius:24px;padding:36px;
+}
+.contact-box h2{color:#fff}
+.contact-box p{color:#94a3b8}
+.contact-grid{display:grid;gap:24px;margin-top:18px}
+@media(min-width:720px){.contact-grid{grid-template-columns:1.2fr .8fr}}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:10px;background:#10b981;color:#042f23;
+  padding:14px 22px;border-radius:999px;font-weight:800;text-decoration:none;
+}
+.wa-btn:hover{background:#34d399;text-decoration:none}
+
+footer{padding:44px 0;color:#7b8498;font-size:13.5px;border-top:1px solid var(--line);text-align:center}
+.muted{color:var(--muted)}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#f1f5f9;border:1px solid var(--line);padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600;color:#334155}
+
+/* Mobile nav hide */
+@media(max-width:680px){.nav-links{display:none}}
+</style>
 </head>
-<body class="bg-gray-50">
+<body>
 
-    <!-- Top Header & Main Header -->
-    <!-- (Existing header code remains the same) -->
-
-    <!-- Main Header -->
-    <header class="main-header sticky top-0 bg-white z-20 shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="logo text-2xl font-bold text-gray-800">
-                <i class="fas fa-store text-teal-500"></i> PastiAda
-            </div>
-            <div class="search-bar flex items-center border rounded-md">
-                <div class="relative">
-                    <button class="px-4 py-2 text-gray-600">Category <i class="fas fa-chevron-down text-xs"></i></button>
-                </div>
-                <input type="text" placeholder="Search..." class="pl-4 pr-10 py-2 w-64 focus:outline-none">
-                <button class="px-4 text-gray-500 hover:text-teal-500">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-            <div class="cart">
-                <a href="#" id="cart-button" class="flex items-center space-x-2 text-gray-700 hover:text-teal-500">
-                    <i class="fas fa-shopping-cart text-2xl text-teal-500"></i>
-                    <div>
-                        <span class="font-bold">KERANJANG</span><br>
-                        <span id="cart-info" class="text-sm">(0) Barang - Rp 0</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Product Section -->
-    <main class="container mx-auto px-4 py-8">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Produk Kami</h2>
-        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <!-- Products will be loaded here -->
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-6 mt-8">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 PastiAda. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Cart Modal -->
-    <div id="cart-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-        <div class="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4">
-            <div class="p-4 border-b flex justify-between items-center">
-                <h3 class="text-xl font-bold">Keranjang Belanja</h3>
-                <button id="close-cart-modal" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-            </div>
-            <div id="cart-items-container" class="p-4 max-h-96 overflow-y-auto"></div>
-            <div class="p-4 border-t">
-                <div class="flex justify-between items-center font-bold text-lg">
-                    <span>Total</span>
-                    <span id="cart-modal-total">Rp 0</span>
-                </div>
-                <button id="proceed-to-shipping-button" class="mt-4 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 font-bold disabled:bg-gray-400">
-                    Lanjutkan ke Pengiriman
-                </button>
-            </div>
-        </div>
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">roy<span>rafi</span></a>
+    <div class="nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#skill">Skill</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#kontak">Kontak</a>
     </div>
-
-    <!-- Shipping Form Modal -->
-    <div id="shipping-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-        <div class="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4">
-            <div class="p-4 border-b flex justify-between items-center">
-                <h3 class="text-xl font-bold">Detail Pengiriman</h3>
-                <button id="close-shipping-modal" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-            </div>
-            <form id="shipping-form" class="p-4 space-y-4">
-                <div>
-                    <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
-                    <input type="text" id="nama" name="nama" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                </div>
-                <div>
-                    <label for="telepon" class="block text-sm font-medium text-gray-700">Nomor Telepon (WhatsApp)</label>
-                    <input type="tel" id="telepon" name="telepon" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                </div>
-                <div>
-                    <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat Lengkap</label>
-                    <textarea id="alamat" name="alamat" rows="3" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
-                </div>
-                <div>
-                    <label for="metode_pembayaran" class="block text-sm font-medium text-gray-700">Metode Pembayaran</label>
-                    <select id="metode_pembayaran" name="metode_pembayaran" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        <option value="">Pilih Metode</option>
-                        <option value="Transfer Bank">Transfer Bank</option>
-                        <option value="COD (Bayar di Tempat)">COD (Bayar di Tempat)</option>
-                    </select>
-                </div>
-                <div class="flex justify-end space-x-4 pt-4">
-                     <button type="button" id="back-to-cart-button" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300">Kembali</button>
-                    <button type="submit" id="checkout-wa-button" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 font-bold">
-                        Kirim Pesanan via WhatsApp
-                    </button>
-                </div>
-            </form>
-        </div>
+    <div class="nav-cta">
+      <a href="#kontak" class="btn ghost" style="padding:9px 16px;font-size:13.5px">Hubungi</a>
     </div>
+  </div>
+</nav>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-    <script src="main.js"></script>
-</body>
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="tag" style="margin-bottom:14px">Available for new opportunities</div>
+      <h1>Roy Rafi<br>Donissafaat</h1>
+      <p class="lead">Digital Marketing & SEO Specialist untuk industri logistik / ekspedisi container. Saya maintenance 120+ halaman rute, optimasi Google Ads harian, dan naikin ranking organik dengan content ops yang rapi.</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn brand">Lihat Portfolio</a>
+        <a href="#kontak" class="btn ghost">Hubungi via WhatsApp</a>
+      </div>
+      <div class="badges">
+        <span class="badge">SEO Content</span>
+        <span class="badge">Google Ads</span>
+        <span class="badge">Google Search Console</span>
+        <span class="badge">Spreadsheet Ops</span>
+        <span class="badge">WA Leads</span>
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <div style="font-weight:700;font-size:15px;margin-bottom:8px">Fokus saat ini</div>
+        <p class="muted" style="font-size:14.5px">Content & Ads maintenance untuk ekspedisi container — update harga rute bulanan, tracking ranking SERP, dan negative keyword harian.</p>
+        <div class="stat-grid">
+          <div class="stat"><b>20+</b><span>artikel / hari</span></div>
+          <div class="stat"><b>120+</b><span>hal. rute</span></div>
+          <div class="stat"><b>&lt;10m</b><span>Ads check / hari</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="tentang" style="padding-top:24px">
+  <div class="container">
+    <div class="grid-2" style="align-items:start">
+      <div>
+        <div class="section-kicker">Tentang</div>
+        <h2>Marketing yang ngerti operasional logistik.</h2>
+        <p class="section-desc">Saya terbiasa kerja dengan data rute dan harga yang update tiap bulan. Pakai Gemini/AI untuk generate template artikel skala besar, lalu saya validasi, upload ke CMS, dan pantau performanya di Google Search Console.</p>
+        <p style="color:#3b4355">Kuat di: rekap data yang ribet, formula spreadsheet untuk logistik bulanan, dan project management content. Sekarang lagi aktif riset tren produk & TikTok Affiliate juga.</p>
+      </div>
+      <div class="card">
+        <strong style="font-size:15px">Cara kerja saya</strong>
+        <ol style="padding-left:18px;margin-top:10px;color:#334155;font-size:14.8px" class="clean">
+          <li><b>Template dulu.</b> Bikin template artikel SEO dengan AI, sesuai kebutuhan perusahaan logistik.</li>
+          <li><b>Inject data real.</b> Masukkan rute Origin–Destinasi + harga update tgl 1–6 tiap bulan.</li>
+          <li><b>Publish massal.</b> 20 halaman/hari. Origin Surabaya / Jakarta / Sidoarjo, ±36–40 kota tujuan per origin.</li>
+          <li><b>Ranking check.</b> Cek keyword “ekspedisi container [rute]” di SERP, posisi Page 1–2.</li>
+          <li><b>Iterasi.</b> Bandingkan dengan kompetitor, update template. Ranking 4+ saya benahi.</li>
+          <li><b>Ads hygiene.</b> Negative keyword Google Ads tiap pagi sebelum jam 08.00.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pengalaman" style="background:#f1f5f9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="section-kicker">Pengalaman</div>
+    <h2>Digital Marketing – LSJ Container / LSJ Logistic</h2>
+    <p class="section-desc">Maintenance website, iklan, dan monitoring WhatsApp leads untuk ekspedisi container antar pulau.</p>
+    
+    <div class="grid-2">
+      <div class="card">
+        <div class="job-title">Website Content Maintenance</div>
+        <div class="job-meta">SEO • CMS • Content Ops</div>
+        <ul class="clean">
+          <li>Maintenance minimal 20 halaman artikel / hari</li>
+          <li>Update daftar harga rute tiap bulan, tgl 1–6</li>
+          <li>Origin utama: Surabaya, Jakarta, Sidoarjo — 36–40 destinasi / origin</li>
+          <li>Tracking ranking GSC untuk keyword “ekspedisi container [origin] [destinasi]”</li>
+          <li>A/B template berdasarkan analisis kompetitor SERP</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="job-title">Google Ads Maintenance</div>
+        <div class="job-meta">Search Ads • Negative Keywords</div>
+        <ul class="clean">
+          <li>Pengecekan harian sebelum jam 08.00, 5–10 menit</li>
+          <li>Negative keyword rutin untuk menjaga kualitas trafik</li>
+          <li>Catat keyword masuk & performa harian</li>
+          <li>Fokus efisiensi budget & lead quality via WhatsApp</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="job-title">WhatsApp Lead Monitoring</div>
+        <div class="job-meta">CRM ringan • Respon cepat</div>
+        <ul class="clean">
+          <li>Monitoring chat masuk dari iklan & website</li>
+          <li>Pastikan lead rute container terfollow-up</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="job-title">Data & Spreadsheet Ops</div>
+        <div class="job-meta">Google Sheets • Rekap logistik</div>
+        <ul class="clean">
+          <li>Formula spreadsheet untuk rekap logistik bulanan</li>
+          <li>Logika data ribet → jadi tabel rapi</li>
+          <li>Project management content calendar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skill">
+  <div class="container">
+    <div class="section-kicker">Skill & Tools</div>
+    <h2>Yang saya pakai sehari-hari</h2>
+    <div class="grid-3" style="margin-top:18px">
+      <div class="skill-pill">SEO Content Writing<small>Template massal, on-page, SERP tracking</small></div>
+      <div class="skill-pill">Google Ads<small>Search, negative keywords, daily hygiene</small></div>
+      <div class="skill-pill">Google Search Console<small>Ranking “ekspedisi container” per rute</small></div>
+      <div class="skill-pill">Google Sheets / Excel<small>Formula logistik, rekap bulanan</small></div>
+      <div class="skill-pill">CMS WordPress<small>Publish 20+ artikel/hari</small></div>
+      <div class="skill-pill">WhatsApp Business<small>Lead handling & monitoring</small></div>
+      <div class="skill-pill">Gemini AI / AI Tools<small>Generate template artikel skala besar</small></div>
+      <div class="skill-pill">TikTok Affiliate<small>Riset tren produk & konten konversi</small></div>
+      <div class="skill-pill">Project Management<small>Content calendar & price update ops</small></div>
+    </div>
+    <div style="margin-top:20px" class="chip-row">
+      <span class="chip">Ekspedisi Container</span>
+      <span class="chip">Logistik Antar Pulau</span>
+      <span class="chip">Surabaya</span>
+      <span class="chip">Jakarta</span>
+      <span class="chip">Sidoarjo</span>
+      <span class="chip">Makassar</span>
+      <span class="chip">Balikpapan</span>
+      <span class="chip">Pontianak</span>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" style="background:#f1f5f9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="section-kicker">Portfolio</div>
+    <h2>Contoh halaman rute yang saya maintain</h2>
+    <p class="section-desc">120+ halaman landing rute container. Update harga bulanan, optimasi template berdasarkan ranking GSC.</p>
+
+    <div class="grid-3">
+      <div class="portfolio-item">
+        <span class="route-tag">Surabaya → Makassar</span>
+        <h4>Ekspedisi Container Surabaya Makassar</h4>
+        <p>Landing SEO + tabel harga update bulanan. Tracking ranking Page 1.</p>
+      </div>
+      <div class="portfolio-item">
+        <span class="route-tag">Jakarta → Balikpapan</span>
+        <h4>Ekspedisi Container Jakarta Balikpapan</h4>
+        <p>Template v3, iterasi setelah analisis kompetitor SERP.</p>
+      </div>
+      <div class="portfolio-item">
+        <span class="route-tag">Sidoarjo → Pontianak</span>
+        <h4>Ekspedisi Container Sidoarjo Pontianak</h4>
+        <p>CTA WhatsApp, tabel estimasi & harga.</p>
+      </div>
+      <div class="portfolio-item">
+        <span class="route-tag">Surabaya → Banjarmasin</span>
+        <h4>Ekspedisi Container Surabaya Banjarmasin</h4>
+        <p>On-page optimized, FAQ schema.</p>
+      </div>
+      <div class="portfolio-item">
+        <span class="route-tag">Jakarta → Makassar</span>
+        <h4>Ekspedisi Container Jakarta Makassar</h4>
+        <p>Ranking check rutin, template improvement.</p>
+      </div>
+      <div class="portfolio-item">
+        <span class="route-tag">+115 halaman lain</span>
+        <h4>36–40 destinasi / origin</h4>
+        <p>Full coverage Kalimantan, Sulawesi, Papua, NTT/NTB.</p>
+      </div>
+    </div>
+    <p style="margin-top:16px;color:var(--muted);font-size:13.5px">Catatan: Untuk alasan NDA, URL live tidak ditampilkan publik. Tersedia saat interview.</p>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="container">
+    <div class="contact-box">
+      <div class="contact-grid">
+        <div>
+          <div class="section-kicker" style="color:#5eead4">Kontak</div>
+          <h2>Mari ngobrol.</h2>
+          <p>Saya open untuk posisi Digital Marketing / SEO / Content Ops, terutama di industri logistik, e-commerce, atau SaaS. Remote / Hybrid / On-site Jawa Timur – terbuka.</p>
+          <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:12px">
+            <a class="wa-btn" href="https://wa.me/6280000000000?text=Halo%20Roy%2C%20saya%20lihat%20portfoliomu%20di%20royrafi.github.io" target="_blank" rel="noopener">
+              Chat WhatsApp
+            </a>
+            <a href="/cdn-cgi/l/email-protection#f199949d9d9eb1839e8883909798df929e9c" class="btn ghost" style="border-color:#334155;color:#cbd5e1">Kirim Email</a>
+          </div>
+          <p style="margin-top:16px;font-size:13.5px;color:#64748b">Ganti nomor WA di index.html baris ~252: <code>https://wa.me/62xxxxxxxxxx</code></p>
+        </div>
+        <div style="background:#0b1222;border:1px solid #1e293b;border-radius:16px;padding:22px">
+          <div style="font-weight:700;color:#e2e8f0;margin-bottom:10px">Info cepat</div>
+          <div style="font-size:14.5px;color:#94a3b8;line-height:2">
+            📍 Jawa Timur, Indonesia<br>
+            💼 Digital Marketing – LSJ Container<br>
+            ⚡ SEO • Google Ads • Sheets<br>
+            📄 <a href="#" style="color:#5eead4">Download CV PDF</a><br>
+            🔗 <a href="#" style="color:#5eead4">LinkedIn</a> · <a href="https://github.com/royrafi" style="color:#5eead4">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Roy Rafi Donissafaat — Dibuat dengan semangat anti-mager. • royrafi.github.io
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
