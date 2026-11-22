@@ -86,9 +86,9 @@ footer{padding:30px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px so
 
       <form id="form" method="post">
         <label for="nama">Nama</label>
-        <input id="nama" name="nama" type="text" required placeholder="Nama kamu">
+        <input id="nama" name="nama" type="text" required minlength="2" placeholder="Nama kamu">
         <label for="email">Email atau WhatsApp</label>
-        <input id="email" name="email" type="text" required placeholder="supaya saya bisa membalas">
+        <input id="email" name="email" type="text" required minlength="5" placeholder="supaya saya bisa membalas">
         <label for="topik">Yang kamu butuhkan</label>
         <select id="topik" name="topik">
           <option>SEO Content Ops</option>
@@ -99,11 +99,11 @@ footer{padding:30px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px so
           <option>Lainnya</option>
         </select>
         <label for="pesan">Pesan</label>
-        <textarea id="pesan" name="pesan" required placeholder="Situasinya bagaimana?"></textarea>
+        <textarea id="pesan" name="pesan" required minlength="5" placeholder="Situasinya bagaimana? Minimal 5 karakter."></textarea>
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
         <button class="btn" id="tombol-kirim" type="submit" style="margin-top:16px;width:100%">Kirim pesan</button>
         <div id="hasil" style="display:none;margin-top:10px;font-size:13.5px;padding:11px 13px;border-radius:9px"></div>
-        <div class="petunjuk">Pesan masuk ke panel admin. Tidak ada pihak ketiga yang menyimpannya.</div>
+        <div class="petunjuk">Pesan masuk ke panel admin. Tidak ada pihak ketiga yang menyimpannya.<br>Pesan minimal 5 karakter.</div>
       </form>
     </div>
 
@@ -199,10 +199,14 @@ form.addEventListener('submit', function(e){
         + '<p style="color:#5c6b63;font-size:14px;margin:0">Saya balas ke kontak yang kamu tulis. Terima kasih.</p></div>';
       return;
     }
-    var pesan = (x.d && x.d.pesan) ? x.d.pesan : 'Gagal mengirim';
+    var pesan = (x.d && x.d.pesan) ? x.d.pesan : 'Gagal mengirim.';
     if (x.kode === 429) pesan = 'Terlalu sering mengirim. Coba lagi satu jam lagi.';
-    else if (x.kode === 400) pesan = 'Isian belum lengkap — nama, kontak, dan pesan wajib diisi.';
     kabar(pesan, '#b42318', '#fdecea');
+    var bidang = x.d && x.d.bidang;
+    if (bidang) {
+      var el = document.getElementById(bidang);
+      if (el) { el.focus(); el.style.borderColor = '#b42318'; el.style.background = '#fdecea'; }
+    }
     tombol.disabled = false;
     tombol.textContent = 'Coba lagi';
   })
