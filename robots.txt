@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# halaman pribadi tidak dimasukkan ke peta situs.
+# boleh dibuka lewat tautan langsung, hanya tidak didaftarkan ke mesin pencari.
+Disallow: /ruangroy.html
+
+Sitemap: https://royrafi.github.io/sitemap.xml
