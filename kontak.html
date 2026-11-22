@@ -84,13 +84,7 @@ footer{padding:30px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px so
       <h2>Kirim pesan</h2>
       <div class="sub">Tulis singkat saja. Yang penting jelas masalahnya.</div>
 
-      <div class="kosong-wadah" id="wadah-form">
-        <b>Form kontak belum tersambung.</b><br>
-        Bagian ini akan aktif setelah server pesan dipasang di VPS.<br>
-        Sementara ini, pakai email atau Telegram di sebelah.
-      </div>
-
-      <form id="form" style="display:none" method="post">
+      <form id="form" method="post">
         <label for="nama">Nama</label>
         <input id="nama" name="nama" type="text" required placeholder="Nama kamu">
         <label for="email">Email atau WhatsApp</label>
@@ -107,7 +101,7 @@ footer{padding:30px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px so
         <label for="pesan">Pesan</label>
         <textarea id="pesan" name="pesan" required placeholder="Situasinya bagaimana?"></textarea>
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
-        <div class="btn" id="tombol-kirim" style="margin-top:16px;text-align:center">Kirim pesan</div>
+        <button class="btn" id="tombol-kirim" type="submit" style="margin-top:16px;width:100%">Kirim pesan</button>
         <div class="petunjuk">Pesan masuk ke panel admin. Tidak ada pihak ketiga yang menyimpannya.</div>
       </form>
     </div>
@@ -171,21 +165,13 @@ function cadangan(teks, cb){
   try { document.execCommand('copy'); cb(); } catch(e) {}
   document.body.removeChild(t);
 }
-// form diaktifkan otomatis kalau server pesan sudah ada
-fetch('https://roy8n.duckdns.org/pesan/sehat', {method:'GET'})
-  .then(function(r){ return r.ok ? r.json() : null; })
-  .then(function(d){
-    if (!d || !d.ok) return;
-    document.getElementById('wadah-form').style.display = 'none';
-    document.getElementById('form').style.display = 'block';
-    document.getElementById('tombol-kirim').addEventListener('click', function(){
-      kirim(this);
-    });
-  })
-  .catch(function(){ /* tetap pakai email/telegram */ });
+document.getElementById('tombol-kirim').addEventListener('click', function(){
+  kirim(this);
+});
 
 function kirim(tombol){
   var f = document.getElementById('form');
+  event.preventDefault();
   var data = new URLSearchParams(new FormData(f));
   tombol.textContent = 'Mengirim…';
   fetch('https://roy8n.duckdns.org/pesan/kirim', {
