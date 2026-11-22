@@ -102,6 +102,7 @@ footer{padding:30px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px so
         <textarea id="pesan" name="pesan" required placeholder="Situasinya bagaimana?"></textarea>
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
         <button class="btn" id="tombol-kirim" type="submit" style="margin-top:16px;width:100%">Kirim pesan</button>
+        <div id="hasil" style="display:none;margin-top:10px;font-size:13.5px;padding:11px 13px;border-radius:9px"></div>
         <div class="petunjuk">Pesan masuk ke panel admin. Tidak ada pihak ketiga yang menyimpannya.</div>
       </form>
     </div>
@@ -165,27 +166,52 @@ function cadangan(teks, cb){
   try { document.execCommand('copy'); cb(); } catch(e) {}
   document.body.removeChild(t);
 }
-document.getElementById('tombol-kirim').addEventListener('click', function(){
-  kirim(this);
-});
+var form = document.getElementById('form');
+var tombol = document.getElementById('tombol-kirim');
+var hasil = document.getElementById('hasil');
 
-function kirim(tombol){
-  var f = document.getElementById('form');
-  event.preventDefault();
-  var data = new URLSearchParams(new FormData(f));
-  tombol.textContent = 'Mengirim…';
-  fetch('https://roy8n.duckdns.org/pesan/kirim', {
-    method:'POST', body:data
-  }).then(function(r){ return r.json(); })
-    .then(function(d){
-      if (d.ok) {
-        f.innerHTML = '<div class="info" style="margin-top:0"><b>Pesan terkirim.</b><br>Saya balas ke kontak yang kamu tulis. Terima kasih.</div>';
-      } else {
-        tombol.textContent = 'Gagal — coba lagi';
-      }
-    })
-    .catch(function(){ tombol.textContent = 'Gagal — pakai email saja'; });
+function kabar(teks, warna, latar){
+  hasil.textContent = teks;
+  hasil.style.display = 'block';
+  hasil.style.color = warna;
+  hasil.style.background = latar;
 }
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();          // baru di sini: browser sudah memeriksa isian wajib
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+
+  var data = new URLSearchParams(new FormData(form));
+  tombol.disabled = true;
+  tombol.textContent = 'Mengirim…';
+
+  fetch('https://roy8n.duckdns.org/pesan/kirim', {
+    method: 'POST',
+    body: data,
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  })
+  .then(function(r){ return r.json().then(function(d){ return {kode:r.status, d:d}; }); })
+  .then(function(x){
+    if (x.d && x.d.ok) {
+      form.innerHTML = '<div style="text-align:center;padding:14px 0">'
+        + '<div style="font-size:34px;line-height:1">&#9989;</div>'
+        + '<h3 style="margin:8px 0 6px;font-size:18px">Pesan terkirim</h3>'
+        + '<p style="color:#5c6b63;font-size:14px;margin:0">Saya balas ke kontak yang kamu tulis. Terima kasih.</p></div>';
+      return;
+    }
+    var pesan = (x.d && x.d.pesan) ? x.d.pesan : 'Gagal mengirim';
+    if (x.kode === 429) pesan = 'Terlalu sering mengirim. Coba lagi satu jam lagi.';
+    else if (x.kode === 400) pesan = 'Isian belum lengkap — nama, kontak, dan pesan wajib diisi.';
+    kabar(pesan, '#b42318', '#fdecea');
+    tombol.disabled = false;
+    tombol.textContent = 'Coba lagi';
+  })
+  .catch(function(){
+    kabar('Tidak bisa menghubungi server. Pakai email atau Telegram di sebelah saja.', '#95551a', '#fdf6e7');
+    tombol.disabled = false;
+    tombol.textContent = 'Coba lagi';
+  });
+});
 </script>
 
 </body>
